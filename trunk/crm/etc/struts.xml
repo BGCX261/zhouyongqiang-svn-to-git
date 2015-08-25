@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+    <struts>
+    	<!--  <include file="struts-contact.xml"></include>-->
+    	<package name="mypackage" extends="struts-default">
+    		<action name="login" class="userAction">
+    			<result>/WEB-INF/content/login.jsp</result>
+    		</action>
+    		
+    		<action name="home" class="userAction" method="toIndex">
+    			<result>/WEB-INF/content/index.jsp</result>
+    		</action>
+    	</package>
+    	
+    	<package name="contactpackage" extends="struts-default" namespace="/contact">
+    		<action name="contact" class="com.kaishengit.action.ContactAction" method="toContact">
+    			<result>/WEB-INF/content/contact/contact.jsp</result>
+    		</action>
+    		<action name="newcontact" class="com.kaishengit.action.ContactAction" method="newContact">
+    			<result>/WEB-INF/content/contact/new_contact.jsp</result>
+    		</action>
+    		<action name="newcompany" class="com.kaishengit.action.ContactAction" method="newCompany">
+    			<result>/WEB-INF/content/contact/new_company.jsp</result>
+    		</action>
+    	</package>
+    	
+    	<package name="activitypackage" extends="struts-default" namespace="/activity">
+    		<action name="toactivity" class="com.kaishengit.action.ActivityAction" method="toActivity">
+    			<result>/WEB-INF/content/activity/activity.jsp</result>
+    		</action>
+    	</package>
+    </struts>
+    
+    
